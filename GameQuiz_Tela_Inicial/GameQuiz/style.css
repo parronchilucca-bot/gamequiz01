@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050914;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    border-bottom: 1px solid #1c2435;
+    background: rgba(5, 9, 20, 0.96);
+    position: relative;
+    z-index: 20;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #7447ff;
+}
+
+nav {
+    display: flex;
+    gap: 55px;
+}
+
+nav a {
+    color: #dce1ee;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 29px 0 25px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a.active {
+    border-bottom: 3px solid #7447ff;
+}
+
+.theme-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #111b38;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 720px;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 100px 45px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    position: relative;
+}
+
+.hero-text {
+    width: 48%;
+    position: relative;
+    z-index: 5;
+}
+
+.eyebrow {
+    color: #8a63ff;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 62px;
+    line-height: 1.05;
+    font-weight: 800;
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: #7546ff;
+}
+
+.description {
+    color: #d0d7e6;
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 650px;
+}
+
+
+/* =========================
+   3 INFORMAÇÕES DO HERO
+========================= */
+
+.features {
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 35px;
+    margin-right: 30px;
+    border-right: 1px solid #263044;
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6130ff, #854dff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.feature strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+    white-space: nowrap;
+}
+
+.feature small {
+    display: block;
+    color: #aeb8cc;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.start-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 45px;
+    padding: 20px 42px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #6132ff, #8048ff);
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(102, 51, 255, 0.35);
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 45px rgba(102, 51, 255, 0.5);
+}
+
+.start-btn span {
+    font-size: 25px;
+}
+
+
+/* =========================
+   CARTAS DOS JOGOS
+========================= */
+
+.game-collage {
+    width: 52%;
+    height: 540px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-card {
+    position: absolute;
+    width: 220px;
+    height: 440px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #30384b;
+    background: #111827;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.game-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0, 0, 0, 0.2) 65%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
+    z-index: 1;
+}
+
+.game-label {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 3px 8px black;
+    z-index: 3;
+}
+
+
+/* POSIÇÃO DAS CARTAS */
+
+.game-card.gta {
+    transform: rotate(-6deg);
+    left: 0;
+    z-index: 1;
+}
+
+.game-card.minecraft {
+    transform: rotate(-3deg);
+    left: 120px;
+    z-index: 2;
+}
+
+.game-card.rdr {
+    transform: rotate(0deg);
+    left: 240px;
+    z-index: 3;
+}
+
+.game-card.souls {
+    transform: rotate(4deg);
+    left: 360px;
+    z-index: 4;
+}
+
+.game-card.roblox {
+    transform: rotate(7deg);
+    left: 480px;
+    z-index: 5;
+}
+
+
+/* =========================
+   CONTROLE
+========================= */
+
+.controller {
+    position: absolute;
+    right: 380px;
+    bottom: 5px;
+    font-size: 80px;
+    z-index: 10;
+    filter: drop-shadow(0 10px 20px rgba(91, 48, 255, 0.4));
+}
+
+
+/* =========================
+   BARRA DE INFORMAÇÕES
+========================= */
+
+.info-bar {
+    max-width: 1400px;
+    margin: 0 auto 80px;
+    padding: 30px 35px;
+    border: 1px solid #222c3f;
+    border-radius: 20px;
+    background: rgba(10, 16, 30, 0.75);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 30px;
+    border-right: 1px solid #263044;
+}
+
+.info:last-child {
+    border-right: none;
+}
+
+.info > span {
+    font-size: 40px;
+    color: #7546ff;
+    flex-shrink: 0;
+}
+
+.info h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #aeb8cc;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   SOBRE / FINAL
+========================= */
+
+.about {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.about > p {
+    color: #8a63ff;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.about .start-btn {
+    margin-top: 25px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #20283a;
+    color: #78849b;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1250px) {
+
+    .hero {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .game-card {
+        width: 190px;
+        height: 400px;
+    }
+
+    .game-card.minecraft {
+        left: 105px;
+    }
+
+    .game-card.rdr {
+        left: 210px;
+    }
+
+    .game-card.souls {
+        left: 315px;
+    }
+
+    .game-card.roblox {
+        left: 420px;
+    }
+
+    .controller {
+        right: 280px;
+    }
+}
+
+
+@media (max-width: 950px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    nav {
+        gap: 25px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding-top: 70px;
+    }
+
+    .hero-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .description {
+        margin: auto;
+    }
+
+    .features {
+        justify-content: center;
+    }
+
+    .game-collage {
+        width: 100%;
+        margin-top: 30px;
+        transform: scale(0.8);
+    }
+
+    .controller {
+        display: none;
+    }
+
+    .info-bar {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .logo {
+        font-size: 25px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .game-collage {
+        transform: scale(0.6);
+        height: 400px;
+    }
+
+    .info-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .info {
+        border-right: none;
+        border-bottom: 1px solid #263044;
+        padding: 20px;
+    }
+
+    .info:last-child {
+        border-bottom: none;
+    }
+
+    .about h2 {
+        font-size: 30px;
+    }
+}
