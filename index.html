@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameQuiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="#inicio" class="logo">🎮 Game<span>Quiz</span></a>
+
+        <nav>
+            <a href="#inicio" class="active">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#como-funciona">Como funciona</a>
+        </nav>
+
+        <button class="theme-btn" id="themeBtn">☼</button>
+    </header>
+
+    <main id="inicio">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <p class="eyebrow">TESTE SEUS CONHECIMENTOS</p>
+
+                <h1>
+                    Qual jogo combina<br>
+                    mais com <span>você?</span>
+                </h1>
+
+                <p class="description">
+                    Responda <strong>15 perguntas</strong> sobre jogos como GTA,
+                    Minecraft, Roblox, Red Dead Redemption, Dark Souls e muito mais.
+                    Descubra seu perfil gamer e veja quais universos combinam mais com você!
+                </p>
+
+                <div class="features">
+
+                    <div class="feature">
+                        <div class="feature-icon">☷</div>
+                        <div>
+                            <strong>15 perguntas</strong>
+                            <small>Rápidas e objetivas</small>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">▮</div>
+                        <div>
+                            <strong>Resultado em %</strong>
+                            <small>Veja sua compatibilidade</small>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">★</div>
+                        <div>
+                            <strong>Análise personalizada</strong>
+                            <small>Descubra seus pontos fortes</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="start-btn" id="startBtn">
+                    🎮 &nbsp; Começar o quiz <span>→</span>
+                </button>
+
+            </div>
+
+
+            <!-- IMAGENS DOS JOGOS -->
+            <div class="game-collage">
+
+                <div class="game-card gta">
+                    <img src="gta.webp" alt="GTA V">
+                    <div class="game-label">GTA V</div>
+                </div>
+
+                <div class="game-card minecraft">
+                    <img src="minecraft.webp" alt="Minecraft">
+                    <div class="game-label">MINECRAFT</div>
+                </div>
+
+                <div class="game-card rdr">
+                    <img src="red.jpg" alt="Red Dead Redemption II">
+                    <div class="game-label">RED DEAD<br>REDEMPTION II</div>
+                </div>
+
+                <div class="game-card souls">
+                    <img src="dark-souls.jpg" alt="Dark Souls">
+                    <div class="game-label">DARK SOULS</div>
+                </div>
+
+                <div class="game-card roblox">
+                    <img src="roblox.jpg" alt="Roblox">
+                    <div class="game-label">ROBLOX</div>
+                </div>
+
+            </div>
+
+            <div class="controller">🎮</div>
+
+        </section>
+
+
+        <!-- BARRA DE INFORMAÇÕES -->
+        <section class="info-bar" id="como-funciona">
+
+            <div class="info">
+                <span>🎮</span>
+                <div>
+                    <h3>Explore seu estilo</h3>
+                    <p>Descubra qual universo de jogos combina com você.</p>
+                </div>
+            </div>
+
+            <div class="info">
+                <span>🎯</span>
+                <div>
+                    <h3>15 perguntas</h3>
+                    <p>Questões sobre jogos famosos e seus conhecimentos.</p>
+                </div>
+            </div>
+
+            <div class="info">
+                <span>▮▮▮</span>
+                <div>
+                    <h3>Veja o resultado</h3>
+                    <p>Receba sua porcentagem de compatibilidade.</p>
+                </div>
+            </div>
+
+            <div class="info">
+                <span>★</span>
+                <div>
+                    <h3>Encontre seu jogo</h3>
+                    <p>Talvez você descubra um novo favorito!</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+        <section class="about" id="sobre">
+
+            <p>GAMEQUIZ</p>
+
+            <h2>Pronto para testar seus conhecimentos?</h2>
+
+            <button class="start-btn" onclick="document.getElementById('startBtn').click()">
+                Começar agora →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        GameQuiz © 2026 — Projeto de quiz gamer
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
