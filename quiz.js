@@ -1,415 +1,546 @@
 const perguntas = [
+
+    // =========================
+    // 5 FÁCEIS
+    // =========================
+
     {
+        nivel: "FÁCIL",
+        categoria: "RED DEAD REDEMPTION II",
+        pergunta: "Qual é o nome do protagonista de Red Dead Redemption 2?",
+        alternativas: [
+            { texto: "Arthur Morgan", correta: true },
+            { texto: "John Marston", correta: false },
+            { texto: "Dutch van der Linde", correta: false },
+            { texto: "Micah Bell", correta: false }
+        ]
+    },
+
+    {
+        nivel: "FÁCIL",
         categoria: "MINECRAFT",
-        pergunta: "Qual criatura explode quando chega perto do jogador?",
-        alternativas: ["Creeper", "Zumbi", "Esqueleto", "Aranha"],
-        correta: 0
+        pergunta: "Qual desses jogos possui o Ender Dragon?",
+        alternativas: [
+            { texto: "Minecraft", correta: true },
+            { texto: "Roblox", correta: false },
+            { texto: "GTA V", correta: false },
+            { texto: "Dark Souls", correta: false }
+        ]
     },
+
     {
+        nivel: "FÁCIL",
         categoria: "GTA V",
-        pergunta: "Quais são os três protagonistas principais de GTA V?",
+        pergunta: "Qual protagonista de GTA V é um ex-assaltante de bancos?",
         alternativas: [
-            "Michael, Franklin e Trevor",
-            "CJ, Big Smoke e Ryder",
-            "Arthur, John e Dutch",
-            "Niko, Roman e Trevor"
-        ],
-        correta: 0
+            { texto: "Michael De Santa", correta: true },
+            { texto: "Franklin Clinton", correta: false },
+            { texto: "Trevor Philips", correta: false },
+            { texto: "Lamar Davis", correta: false }
+        ]
     },
+
     {
+        nivel: "FÁCIL",
+        categoria: "MINECRAFT",
+        pergunta: "Qual recurso é usado para criar circuitos e mecanismos em Minecraft?",
+        alternativas: [
+            { texto: "Redstone", correta: true },
+            { texto: "Obsidiana", correta: false },
+            { texto: "Quartzo", correta: false },
+            { texto: "Carvão", correta: false }
+        ]
+    },
+
+    {
+        nivel: "FÁCIL",
         categoria: "DARK SOULS",
-        pergunta: "Para que servem as fogueiras em Dark Souls?",
+        pergunta: "Qual item é usado para recuperar vida em Dark Souls?",
         alternativas: [
-            "Servem como pontos de descanso",
-            "Servem para comprar armas",
-            "Servem para criar personagens",
-            "Servem para mudar o mapa"
-        ],
-        correta: 0
+            { texto: "Estus Flask", correta: true },
+            { texto: "Titanite", correta: false },
+            { texto: "Humanity", correta: false },
+            { texto: "Homeward Bone", correta: false }
+        ]
     },
+
+
+    // =========================
+    // 5 MÉDIAS
+    // =========================
+
     {
+        nivel: "MÉDIO",
         categoria: "ROBLOX",
-        pergunta: "O que é o Roblox?",
+        pergunta: "Qual linguagem é usada pelo Roblox para criar scripts?",
         alternativas: [
-            "Uma plataforma com jogos e experiências criadas por usuários",
-            "Um jogo exclusivamente de corrida",
-            "Um jogo exclusivo de tiro",
-            "Um aplicativo de edição de vídeos"
-        ],
-        correta: 0
+            { texto: "Luau", correta: true },
+            { texto: "Java", correta: false },
+            { texto: "Python", correta: false },
+            { texto: "C#", correta: false }
+        ]
     },
+
     {
-        categoria: "RED DEAD REDEMPTION",
-        pergunta: "Quem é o protagonista do primeiro Red Dead Redemption?",
+        nivel: "MÉDIO",
+        categoria: "RED DEAD REDEMPTION II",
+        pergunta: "Quem é o líder da gangue à qual Arthur Morgan pertence?",
         alternativas: [
-            "John Marston",
-            "Arthur Morgan",
-            "Dutch van der Linde",
-            "Micah Bell"
-        ],
-        correta: 0
+            { texto: "Dutch van der Linde", correta: true },
+            { texto: "Hosea Matthews", correta: false },
+            { texto: "John Marston", correta: false },
+            { texto: "Bill Williamson", correta: false }
+        ]
     },
+
     {
-        categoria: "MINECRAFT",
-        pergunta: "Qual é o chefe encontrado na dimensão The End?",
-        alternativas: [
-            "Ender Dragon",
-            "Wither",
-            "Warden",
-            "Elder Guardian"
-        ],
-        correta: 0
-    },
-    {
+        nivel: "MÉDIO",
         categoria: "GTA V",
-        pergunta: "Qual é a principal cidade de GTA V?",
+        pergunta: "Qual personagem possui uma habilidade especial que permite controlar melhor o tempo durante a direção?",
         alternativas: [
-            "Los Santos",
-            "Liberty City",
-            "Vice City",
-            "San Fierro"
-        ],
-        correta: 0
+            { texto: "Franklin", correta: true },
+            { texto: "Michael", correta: false },
+            { texto: "Trevor", correta: false },
+            { texto: "Lester", correta: false }
+        ]
     },
+
     {
+        nivel: "MÉDIO",
+        categoria: "MINECRAFT",
+        pergunta: "Em qual dimensão ficam as End Cities?",
+        alternativas: [
+            { texto: "The End", correta: true },
+            { texto: "Nether", correta: false },
+            { texto: "Overworld", correta: false },
+            { texto: "Deep Dark", correta: false }
+        ]
+    },
+
+    {
+        nivel: "MÉDIO",
         categoria: "DARK SOULS",
-        pergunta: "Quem é conhecido como Lord of Cinder no primeiro Dark Souls?",
+        pergunta: "Qual atributo está relacionado aos espaços disponíveis para sintonizar magias em Dark Souls?",
         alternativas: [
-            "Gwyn",
-            "Artorias",
-            "Solaire",
-            "Ornstein"
-        ],
-        correta: 0
+            { texto: "Attunement", correta: true },
+            { texto: "Endurance", correta: false },
+            { texto: "Vitality", correta: false },
+            { texto: "Resistance", correta: false }
+        ]
     },
+
+
+    // =========================
+    // 5 DIFÍCEIS
+    // =========================
+
     {
+        nivel: "DIFÍCIL",
+        categoria: "MINECRAFT",
+        pergunta: "Qual encantamento aumenta o tempo que o jogador consegue permanecer submerso?",
+        alternativas: [
+            { texto: "Respiração", correta: true },
+            { texto: "Afinidade Aquática", correta: false },
+            { texto: "Proteção", correta: false },
+            { texto: "Passos Profundos", correta: false }
+        ]
+    },
+
+    {
+        nivel: "DIFÍCIL",
+        categoria: "RED DEAD REDEMPTION II",
+        pergunta: "Qual personagem é um dos principais mentores de Arthur Morgan dentro da gangue?",
+        alternativas: [
+            { texto: "Hosea Matthews", correta: true },
+            { texto: "Micah Bell", correta: false },
+            { texto: "Javier Escuella", correta: false },
+            { texto: "Charles Smith", correta: false }
+        ]
+    },
+
+    {
+        nivel: "DIFÍCIL",
+        categoria: "GTA V",
+        pergunta: "Qual personagem possui uma habilidade especial que aumenta sua resistência e causa mais dano?",
+        alternativas: [
+            { texto: "Trevor", correta: true },
+            { texto: "Michael", correta: false },
+            { texto: "Franklin", correta: false },
+            { texto: "Lester", correta: false }
+        ]
+    },
+
+    {
+        nivel: "DIFÍCIL",
+        categoria: "MINECRAFT",
+        pergunta: "Qual destes blocos é usado para construir a estrutura de um portal para o Nether?",
+        alternativas: [
+            { texto: "Obsidiana", correta: true },
+            { texto: "Bedrock", correta: false },
+            { texto: "Pedra do End", correta: false },
+            { texto: "Deepslate", correta: false }
+        ]
+    },
+
+    {
+        nivel: "DIFÍCIL",
         categoria: "ROBLOX",
-        pergunta: "Qual linguagem é usada para programar no Roblox?",
+        pergunta: "Qual destes termos se refere à linguagem de programação derivada de Lua usada atualmente pelo Roblox?",
         alternativas: [
-            "Luau",
-            "Java",
-            "Python",
-            "C++"
-        ],
-        correta: 0
-    },
-    {
-        categoria: "RED DEAD REDEMPTION 2",
-        pergunta: "Quem é o protagonista principal de Red Dead Redemption 2?",
-        alternativas: [
-            "Arthur Morgan",
-            "John Marston",
-            "Dutch van der Linde",
-            "Bill Williamson"
-        ],
-        correta: 0
-    },
-    {
-        categoria: "MINECRAFT",
-        pergunta: "Qual material é usado para criar uma bancada de trabalho?",
-        alternativas: [
-            "Tábuas de madeira",
-            "Pedra",
-            "Ferro",
-            "Diamante"
-        ],
-        correta: 0
-    },
-    {
-        categoria: "GTA V",
-        pergunta: "Qual protagonista mora em Sandy Shores?",
-        alternativas: [
-            "Trevor",
-            "Michael",
-            "Franklin",
-            "Lamar"
-        ],
-        correta: 0
-    },
-    {
-        categoria: "DARK SOULS",
-        pergunta: "O que acontece quando o jogador morre em Dark Souls?",
-        alternativas: [
-            "Ele retorna à última fogueira e pode tentar recuperar suas almas",
-            "Ele perde permanentemente o personagem",
-            "O jogo é apagado",
-            "Ele precisa começar uma nova campanha"
-        ],
-        correta: 0
-    },
-    {
-        categoria: "RED DEAD REDEMPTION 2",
-        pergunta: "Qual gangue é liderada por Dutch van der Linde?",
-        alternativas: [
-            "Gangue Van der Linde",
-            "Gangue O'Driscoll",
-            "Gangue Lemoyne Raiders",
-            "Gangue Del Lobo"
-        ],
-        correta: 0
-    },
-    {
-        categoria: "MISTURADO",
-        pergunta: "Qual desses jogos é conhecido por permitir que jogadores criem suas próprias experiências?",
-        alternativas: [
-            "Roblox",
-            "Dark Souls",
-            "Red Dead Redemption 2",
-            "GTA V"
-        ],
-        correta: 0
+            { texto: "Luau", correta: true },
+            { texto: "LuaScript", correta: false },
+            { texto: "Roblox Code", correta: false },
+            { texto: "RBLX", correta: false }
+        ]
     }
 ];
 
 
-let perguntaAtual = 0;
-let acertos = 0;
-let respondeu = false;
+// ======================================================
+// EMBARALHAR ALTERNATIVAS
+// ======================================================
 
+function embaralhar(array) {
 
-// ELEMENTOS DA PÁGINA
+    const copia = [...array];
 
-const categoria = document.getElementById("categoria");
-const pergunta = document.getElementById("pergunta");
-const alternativas = document.getElementById("alternativas");
-const feedback = document.getElementById("feedback");
+    for (let i = copia.length - 1; i > 0; i--) {
 
-const contador = document.getElementById("contador");
-const score = document.getElementById("score");
+        const j = Math.floor(Math.random() * (i + 1));
 
-const porcentagem = document.getElementById("porcentagem");
-const barraProgresso = document.getElementById("barraProgresso");
+        [copia[i], copia[j]] = [copia[j], copia[i]];
+    }
 
-const proxima = document.getElementById("proxima");
-const voltar = document.getElementById("voltar");
-
-
-// MOSTRAR PERGUNTA
-
-function mostrarPergunta() {
-
-    respondeu = false;
-
-    const atual = perguntas[perguntaAtual];
-
-    categoria.textContent = atual.categoria;
-
-    pergunta.textContent = atual.pergunta;
-
-    contador.textContent =
-        `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
-
-    score.textContent = acertos;
-
-    feedback.textContent = "";
-
-    proxima.disabled = true;
-
-
-    // ATUALIZAR PROGRESSO
-
-    const progresso =
-        ((perguntaAtual + 1) / perguntas.length) * 100;
-
-    porcentagem.textContent =
-        `${Math.round(progresso)}%`;
-
-    barraProgresso.style.width =
-        `${progresso}%`;
-
-
-    // LIMPAR ALTERNATIVAS
-
-    alternativas.innerHTML = "";
-
-
-    // CRIAR BOTÕES
-
-    atual.alternativas.forEach((texto, indice) => {
-
-        const botao = document.createElement("button");
-
-        botao.classList.add("alternativa");
-
-        botao.textContent = texto;
-
-        botao.addEventListener("click", () => {
-
-            selecionarResposta(indice);
-
-        });
-
-        alternativas.appendChild(botao);
-
-    });
+    return copia;
 }
 
 
-// VERIFICAR RESPOSTA
+// ======================================================
+// ELEMENTOS DO HTML
+// ======================================================
 
-function selecionarResposta(indice) {
+const perguntaElement = document.getElementById("pergunta");
+const alternativasElement = document.getElementById("alternativas");
+const categoriaElement = document.getElementById("categoria");
 
-    if (respondeu) {
+const contadorElement = document.getElementById("contador");
+const scoreElement = document.getElementById("score");
+
+const porcentagemElement = document.getElementById("porcentagem");
+const barraElement = document.getElementById("barraProgresso");
+
+const feedbackElement = document.getElementById("feedback");
+
+const voltarButton = document.getElementById("voltar");
+const proximaButton = document.getElementById("proxima");
+
+
+// ======================================================
+// VARIÁVEIS
+// ======================================================
+
+let perguntaAtual = 0;
+let acertos = 0;
+
+// Guarda a resposta escolhida em cada pergunta
+let respostas = new Array(perguntas.length).fill(null);
+
+// Guarda a ordem das alternativas para não mudar
+// quando o usuário voltar para uma pergunta
+let alternativasEmbaralhadas = [];
+
+
+// ======================================================
+// PREPARAR ALTERNATIVAS
+// ======================================================
+
+perguntas.forEach((pergunta, index) => {
+
+    alternativasEmbaralhadas[index] =
+        embaralhar(pergunta.alternativas);
+
+});
+
+
+// ======================================================
+// MOSTRAR PERGUNTA
+// ======================================================
+
+function mostrarPergunta() {
+
+    const pergunta = perguntas[perguntaAtual];
+
+    // Pergunta
+    perguntaElement.textContent = pergunta.pergunta;
+
+    // Categoria
+    categoriaElement.textContent = pergunta.categoria;
+
+    // Contador
+    contadorElement.textContent =
+        `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
+
+    // Pontuação
+    scoreElement.textContent = acertos;
+
+    // Porcentagem do progresso
+    const progresso =
+        Math.round(((perguntaAtual + 1) / perguntas.length) * 100);
+
+    porcentagemElement.textContent = `${progresso}%`;
+
+    barraElement.style.width = `${progresso}%`;
+
+    // Limpa feedback
+    feedbackElement.textContent = "";
+
+    // Limpa alternativas
+    alternativasElement.innerHTML = "";
+
+    // Verifica se já respondeu essa pergunta
+    const respostaAnterior = respostas[perguntaAtual];
+
+    // Cria as alternativas
+    alternativasEmbaralhadas[perguntaAtual].forEach(
+        (alternativa, index) => {
+
+            const botao = document.createElement("button");
+
+            botao.classList.add("alternativa");
+
+            botao.textContent = alternativa.texto;
+
+            // Se já respondeu anteriormente
+            if (respostaAnterior !== null) {
+
+                botao.disabled = true;
+
+                if (alternativa.correta) {
+                    botao.classList.add("correta");
+                }
+
+                if (
+                    respostaAnterior === alternativa.texto &&
+                    !alternativa.correta
+                ) {
+                    botao.classList.add("errada");
+                }
+
+            } else {
+
+                botao.addEventListener("click", () => {
+
+                    selecionarResposta(alternativa);
+
+                });
+
+            }
+
+            alternativasElement.appendChild(botao);
+        }
+    );
+
+
+    // Botão voltar
+    if (perguntaAtual === 0) {
+        voltarButton.disabled = true;
+    } else {
+        voltarButton.disabled = false;
+    }
+
+
+    // Botão próxima
+    if (respostaAnterior === null) {
+
+        proximaButton.disabled = true;
+        proximaButton.textContent = "Próxima →";
+
+    } else {
+
+        proximaButton.disabled = false;
+
+        if (perguntaAtual === perguntas.length - 1) {
+            proximaButton.textContent = "Finalizar →";
+        } else {
+            proximaButton.textContent = "Próxima →";
+        }
+    }
+}
+
+
+// ======================================================
+// SELECIONAR RESPOSTA
+// ======================================================
+
+function selecionarResposta(alternativa) {
+
+    // Impede selecionar novamente
+    if (respostas[perguntaAtual] !== null) {
         return;
     }
 
-    respondeu = true;
+    // Salva a resposta
+    respostas[perguntaAtual] = alternativa.texto;
 
-    const atual = perguntas[perguntaAtual];
 
+    // Verifica se acertou
+    if (alternativa.correta) {
+
+        acertos++;
+
+        feedbackElement.textContent = "✓ Resposta correta!";
+
+    } else {
+
+        feedbackElement.textContent = "✗ Resposta incorreta.";
+
+    }
+
+
+    // Atualiza pontuação
+    scoreElement.textContent = acertos;
+
+
+    // Marca visualmente as respostas
     const botoes =
-        document.querySelectorAll(".alternativa");
-
+        alternativasElement.querySelectorAll("button");
 
     botoes.forEach(botao => {
 
         botao.disabled = true;
 
+        const texto = botao.textContent;
+
+        const respostaCorreta =
+            perguntas[perguntaAtual].alternativas.find(
+                alternativa => alternativa.correta
+            );
+
+        // Mostra a correta
+        if (texto === respostaCorreta.texto) {
+
+            botao.classList.add("correta");
+
+        }
+
+        // Se foi a escolhida e estava errada
+        if (
+            texto === alternativa.texto &&
+            !alternativa.correta
+        ) {
+
+            botao.classList.add("errada");
+
+        }
+
     });
 
 
-    // RESPOSTA CORRETA
+    // AGORA SIM libera o botão Próxima
+    proximaButton.disabled = false;
 
-    if (indice === atual.correta) {
+    if (perguntaAtual === perguntas.length - 1) {
 
-        acertos++;
+        proximaButton.textContent = "Finalizar →";
 
-        botoes[indice].classList.add("correta");
+    } else {
 
-        feedback.textContent = "✅ Resposta correta!";
-
-        feedback.className = "feedback-correto";
-
-    }
-
-    // RESPOSTA ERRADA
-
-    else {
-
-        botoes[indice].classList.add("errada");
-
-        botoes[atual.correta].classList.add("correta");
-
-        feedback.textContent =
-            "❌ Resposta errada!";
-
-        feedback.className = "feedback-errado";
+        proximaButton.textContent = "Próxima →";
 
     }
-
-
-    score.textContent = acertos;
-
-    proxima.disabled = false;
 }
 
 
-// PRÓXIMA PERGUNTA
+// ======================================================
+// BOTÃO PRÓXIMA
+// ======================================================
 
-proxima.addEventListener("click", () => {
+proximaButton.addEventListener("click", () => {
 
-    perguntaAtual++;
+    // Não faz nada se ainda não respondeu
+    if (respostas[perguntaAtual] === null) {
+        return;
+    }
 
-    if (perguntaAtual < perguntas.length) {
-
-        mostrarPergunta();
-
-    } else {
+    // Última pergunta
+    if (perguntaAtual === perguntas.length - 1) {
 
         mostrarResultado();
 
+        return;
     }
 
+    // Próxima pergunta
+    perguntaAtual++;
+
+    mostrarPergunta();
 });
 
 
-// VOLTAR
+// ======================================================
+// BOTÃO VOLTAR
+// ======================================================
 
-voltar.addEventListener("click", () => {
+voltarButton.addEventListener("click", () => {
 
-    if (perguntaAtual > 0) {
-
-        perguntaAtual--;
-
-        mostrarPergunta();
-
-    } else {
-
-        window.location.href = "index.html";
-
+    if (perguntaAtual === 0) {
+        return;
     }
 
+    perguntaAtual--;
+
+    mostrarPergunta();
 });
 
 
-// RESULTADO FINAL
+// ======================================================
+// RESULTADO
+// ======================================================
 
 function mostrarResultado() {
 
-    const porcentagemFinal =
+    const porcentagem =
         Math.round((acertos / perguntas.length) * 100);
 
+    const main = document.querySelector("main");
 
-    let mensagem = "";
+    main.innerHTML = `
 
+        <section class="quiz">
 
-    if (porcentagemFinal >= 90) {
+            <div id="categoria">RESULTADO</div>
 
-        mensagem = "🏆 MESTRE GAMER!";
+            <h1>🎮 Quiz finalizado!</h1>
 
-    }
+            <div class="resultado">
 
-    else if (porcentagemFinal >= 70) {
+                <h2>${porcentagem}%</h2>
 
-        mensagem = "🔥 MUITO BOM!";
+                <p>
+                    Você acertou
+                    <strong>${acertos}</strong>
+                    de
+                    <strong>${perguntas.length}</strong>
+                    perguntas.
+                </p>
 
-    }
+                <p>
+                    ${
+                        porcentagem >= 90
+                        ? "🏆 Mestre Gamer!"
+                        : porcentagem >= 70
+                        ? "🔥 Muito bom!"
+                        : porcentagem >= 50
+                        ? "🎮 Bom resultado!"
+                        : "🕹️ Continue jogando!"
+                    }
+                </p>
 
-    else if (porcentagemFinal >= 50) {
-
-        mensagem = "🎮 BOM RESULTADO!";
-
-    }
-
-    else {
-
-        mensagem = "🕹️ CONTINUE JOGANDO!";
-
-    }
-
-
-    document.querySelector("main").innerHTML = `
-
-        <section class="quiz resultado">
-
-            <h1>${mensagem}</h1>
-
-            <div class="porcentagem-final">
-
-                ${porcentagemFinal}%
-
-            </div>
-
-            <p>
-
-                Você acertou <strong>${acertos}</strong>
-
-                de <strong>${perguntas.length}</strong> perguntas.
-
-            </p>
-
-            <div class="botoes">
-
-                <button onclick="location.reload()">
-
-                    🔄 Fazer novamente
-
-                </button>
-
-                <button onclick="location.href='index.html'">
-
-                    🏠 Voltar ao início
-
+                <button
+                    class="restart-btn"
+                    onclick="location.reload()"
+                >
+                    🔄 Jogar novamente
                 </button>
 
             </div>
@@ -417,10 +548,11 @@ function mostrarResultado() {
         </section>
 
     `;
-
 }
 
 
-// COMEÇAR
+// ======================================================
+// INICIAR
+// ======================================================
 
 mostrarPergunta();
