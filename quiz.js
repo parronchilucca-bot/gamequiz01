@@ -28,9 +28,9 @@ const perguntas = [
         ]
     },
 
-    {CIL",
-        categoria: "GTA
-        nivel: "FÁ V",
+    {
+        nivel: "FÁCIL",
+        categoria: "GTA V",
         pergunta: "Qual protagonista de GTA V é um ex-assaltante de bancos?",
         alternativas: [
             { texto: "Michael De Santa", correta: true },
@@ -193,11 +193,12 @@ const perguntas = [
             { texto: "RBLX", correta: false }
         ]
     }
+
 ];
 
 
 // ======================================================
-// EMBARALHAR ALTERNATIVAS
+// EMBARALHAR
 // ======================================================
 
 function embaralhar(array) {
@@ -242,11 +243,8 @@ const proximaButton = document.getElementById("proxima");
 let perguntaAtual = 0;
 let acertos = 0;
 
-// Guarda a resposta escolhida em cada pergunta
 let respostas = new Array(perguntas.length).fill(null);
 
-// Guarda a ordem das alternativas para não mudar
-// quando o usuário voltar para uma pergunta
 let alternativasEmbaralhadas = [];
 
 
@@ -270,20 +268,18 @@ function mostrarPergunta() {
 
     const pergunta = perguntas[perguntaAtual];
 
-    // Pergunta
     perguntaElement.textContent = pergunta.pergunta;
 
-    // Categoria
     categoriaElement.textContent = pergunta.categoria;
 
-    // Contador
     contadorElement.textContent =
         `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
 
-    // Pontuação
     scoreElement.textContent = acertos;
 
-    // Porcentagem do progresso
+
+    // Progresso
+
     const progresso =
         Math.round(((perguntaAtual + 1) / perguntas.length) * 100);
 
@@ -291,18 +287,25 @@ function mostrarPergunta() {
 
     barraElement.style.width = `${progresso}%`;
 
-    // Limpa feedback
-    feedbackElement.textContent = "";
 
-    // Limpa alternativas
+    // Limpar feedback
+
+    feedbackElement.textContent = "";
+    feedbackElement.className = "";
+
+
+    // Limpar alternativas
+
     alternativasElement.innerHTML = "";
 
-    // Verifica se já respondeu essa pergunta
+
+    // Verificar resposta anterior
+
     const respostaAnterior = respostas[perguntaAtual];
 
-    // Cria as alternativas
+
     alternativasEmbaralhadas[perguntaAtual].forEach(
-        (alternativa, index) => {
+        (alternativa) => {
 
             const botao = document.createElement("button");
 
@@ -310,14 +313,18 @@ function mostrarPergunta() {
 
             botao.textContent = alternativa.texto;
 
-            // Se já respondeu anteriormente
+
+            // Se já respondeu
+
             if (respostaAnterior !== null) {
 
                 botao.disabled = true;
 
+
                 if (alternativa.correta) {
                     botao.classList.add("correta");
                 }
+
 
                 if (
                     respostaAnterior === alternativa.texto &&
@@ -325,6 +332,7 @@ function mostrarPergunta() {
                 ) {
                     botao.classList.add("errada");
                 }
+
 
             } else {
 
@@ -336,20 +344,20 @@ function mostrarPergunta() {
 
             }
 
+
             alternativasElement.appendChild(botao);
+
         }
     );
 
 
     // Botão voltar
-    if (perguntaAtual === 0) {
-        voltarButton.disabled = true;
-    } else {
-        voltarButton.disabled = false;
-    }
+
+    voltarButton.disabled = perguntaAtual === 0;
 
 
     // Botão próxima
+
     if (respostaAnterior === null) {
 
         proximaButton.disabled = true;
@@ -360,11 +368,17 @@ function mostrarPergunta() {
         proximaButton.disabled = false;
 
         if (perguntaAtual === perguntas.length - 1) {
+
             proximaButton.textContent = "Finalizar →";
+
         } else {
+
             proximaButton.textContent = "Próxima →";
+
         }
+
     }
+
 }
 
 
@@ -374,36 +388,54 @@ function mostrarPergunta() {
 
 function selecionarResposta(alternativa) {
 
-    // Impede selecionar novamente
     if (respostas[perguntaAtual] !== null) {
         return;
     }
 
-    // Salva a resposta
+
+    // Salvar resposta
+
     respostas[perguntaAtual] = alternativa.texto;
 
 
-    // Verifica se acertou
+    // Verificar acerto
+
     if (alternativa.correta) {
 
         acertos++;
 
-        feedbackElement.textContent = "✓ Resposta correta!";
+        feedbackElement.textContent =
+            "✓ Resposta correta!";
+
+        feedbackElement.className =
+            "feedback-correto";
 
     } else {
 
-        feedbackElement.textContent = "✗ Resposta incorreta.";
+        feedbackElement.textContent =
+            "✗ Resposta incorreta.";
+
+        feedbackElement.className =
+            "feedback-errado";
 
     }
 
 
-    // Atualiza pontuação
+    // Atualizar pontuação
+
     scoreElement.textContent = acertos;
 
 
-    // Marca visualmente as respostas
+    // Marcar alternativas
+
     const botoes =
         alternativasElement.querySelectorAll("button");
+
+    const respostaCorreta =
+        perguntas[perguntaAtual].alternativas.find(
+            alternativa => alternativa.correta
+        );
+
 
     botoes.forEach(botao => {
 
@@ -411,19 +443,18 @@ function selecionarResposta(alternativa) {
 
         const texto = botao.textContent;
 
-        const respostaCorreta =
-            perguntas[perguntaAtual].alternativas.find(
-                alternativa => alternativa.correta
-            );
 
-        // Mostra a correta
+        // Mostrar resposta correta
+
         if (texto === respostaCorreta.texto) {
 
             botao.classList.add("correta");
 
         }
 
-        // Se foi a escolhida e estava errada
+
+        // Mostrar resposta errada escolhida
+
         if (
             texto === alternativa.texto &&
             !alternativa.correta
@@ -436,8 +467,10 @@ function selecionarResposta(alternativa) {
     });
 
 
-    // AGORA SIM libera o botão Próxima
+    // Liberar próxima
+
     proximaButton.disabled = false;
+
 
     if (perguntaAtual === perguntas.length - 1) {
 
@@ -448,6 +481,7 @@ function selecionarResposta(alternativa) {
         proximaButton.textContent = "Próxima →";
 
     }
+
 }
 
 
@@ -457,12 +491,13 @@ function selecionarResposta(alternativa) {
 
 proximaButton.addEventListener("click", () => {
 
-    // Não faz nada se ainda não respondeu
     if (respostas[perguntaAtual] === null) {
         return;
     }
 
+
     // Última pergunta
+
     if (perguntaAtual === perguntas.length - 1) {
 
         mostrarResultado();
@@ -470,10 +505,11 @@ proximaButton.addEventListener("click", () => {
         return;
     }
 
-    // Próxima pergunta
+
     perguntaAtual++;
 
     mostrarPergunta();
+
 });
 
 
@@ -490,11 +526,12 @@ voltarButton.addEventListener("click", () => {
     perguntaAtual--;
 
     mostrarPergunta();
+
 });
 
 
 // ======================================================
-// RESULTADO
+// RESULTADO FINAL
 // ======================================================
 
 function mostrarResultado() {
@@ -504,43 +541,76 @@ function mostrarResultado() {
 
     const main = document.querySelector("main");
 
+
+    let mensagem = "";
+
+    if (porcentagem >= 90) {
+
+        mensagem = "🏆 Mestre Gamer!";
+
+    } else if (porcentagem >= 70) {
+
+        mensagem = "🔥 Muito bom!";
+
+    } else if (porcentagem >= 50) {
+
+        mensagem = "🎮 Bom resultado!";
+
+    } else {
+
+        mensagem = "🕹️ Continue jogando!";
+
+    }
+
+
     main.innerHTML = `
 
-        <section class="quiz">
+        <section class="quiz resultado-card">
 
-            <div id="categoria">RESULTADO</div>
+            <div id="categoria">
+                RESULTADO
+            </div>
 
-            <h1>🎮 Quiz finalizado!</h1>
+            <h1>
+                🎮 Quiz finalizado!
+            </h1>
 
             <div class="resultado">
 
-                <h2>${porcentagem}%</h2>
+                <div class="pontuacao-final">
 
-                <p>
+                    <span>
+                        ${porcentagem}%
+                    </span>
+
+                </div>
+
+
+                <p class="acertos-final">
+
                     Você acertou
                     <strong>${acertos}</strong>
                     de
                     <strong>${perguntas.length}</strong>
                     perguntas.
+
                 </p>
 
-                <p>
-                    ${
-                        porcentagem >= 90
-                        ? "🏆 Mestre Gamer!"
-                        : porcentagem >= 70
-                        ? "🔥 Muito bom!"
-                        : porcentagem >= 50
-                        ? "🎮 Bom resultado!"
-                        : "🕹️ Continue jogando!"
-                    }
-                </p>
+
+                <div class="mensagem-final">
+
+                    ${mensagem}
+
+                </div>
+
 
                 <button
                     class="restart-btn"
                     onclick="location.reload()"
                 >
+
                     🔄 Jogar novamente
+
                 </button>
 
             </div>
@@ -548,6 +618,7 @@ function mostrarResultado() {
         </section>
 
     `;
+
 }
 
 
