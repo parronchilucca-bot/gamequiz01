@@ -11,7 +11,11 @@ body {
     min-height: 100vh;
 }
 
-/* CABEÇALHO */
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
 header {
     height: 75px;
     display: flex;
@@ -47,14 +51,22 @@ header {
     font-weight: bold;
 }
 
-/* ÁREA PRINCIPAL */
+
+/* ========================================
+   ÁREA PRINCIPAL
+======================================== */
+
 main {
     width: 90%;
     max-width: 900px;
     margin: 40px auto;
 }
 
-/* PROGRESSO */
+
+/* ========================================
+   PROGRESSO
+======================================== */
+
 .progresso {
     margin-bottom: 30px;
 }
@@ -78,16 +90,24 @@ main {
     width: 7%;
     height: 100%;
     background: linear-gradient(90deg, #7b2cff, #bd6cff);
-    transition: 0.3s;
+    transition: width 0.3s ease;
 }
 
-/* CARD DO QUIZ */
+
+/* ========================================
+   CARD DO QUIZ
+======================================== */
+
 .quiz {
     background: #131321;
     border: 1px solid #292940;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 0 30px rgba(100, 50, 200, 0.15);
+
+    box-shadow:
+        0 0 30px rgba(100, 50, 200, 0.15);
+
+    animation: aparecer 0.35s ease;
 }
 
 #categoria {
@@ -107,7 +127,11 @@ main {
     margin-bottom: 30px;
 }
 
-/* ALTERNATIVAS */
+
+/* ========================================
+   ALTERNATIVAS
+======================================== */
+
 #alternativas {
     display: flex;
     flex-direction: column;
@@ -117,48 +141,66 @@ main {
 .alternativa {
     width: 100%;
     padding: 18px 20px;
+
     background: #1b1b2c;
     border: 2px solid #303047;
     border-radius: 12px;
+
     color: white;
     text-align: left;
     font-size: 16px;
+
     cursor: pointer;
-    transition: 0.2s;
+
+    transition:
+        0.2s ease;
 }
 
-.alternativa:hover {
+.alternativa:hover:not(:disabled) {
     border-color: #9b5cff;
     background: #242039;
     transform: translateY(-2px);
 }
 
+.alternativa:disabled {
+    cursor: default;
+}
+
+
+/* RESPOSTA CORRETA */
+
 .alternativa.correta {
     background: #16351f;
     border-color: #35d06f;
+    color: #ffffff;
 }
+
+
+/* RESPOSTA ERRADA */
 
 .alternativa.errada {
     background: #3a1818;
     border-color: #ef5350;
+    color: #ffffff;
 }
 
-/* FEEDBACK */
+
+/* ========================================
+   FEEDBACK
+======================================== */
+
 #feedback {
     min-height: 25px;
     margin-top: 20px;
     font-weight: bold;
+    font-size: 16px;
 }
 
-.feedback-correto {
-    color: #35d06f;
-}
 
-.feedback-errado {
-    color: #ef5350;
-}
+/* ========================================
+   BOTÕES
+======================================== */
 
-/* BOTÕES */
 .botoes {
     display: flex;
     justify-content: space-between;
@@ -169,48 +211,267 @@ main {
     border: none;
     padding: 13px 22px;
     border-radius: 10px;
+
     font-size: 15px;
     font-weight: bold;
+
     cursor: pointer;
+
+    transition:
+        0.2s ease;
 }
+
+
+/* VOLTAR */
 
 #voltar {
     background: #252538;
     color: white;
 }
 
-#proxima {
-    background: #9b5cff;
-    color: white;
+#voltar:hover:not(:disabled) {
+    background: #303049;
+    transform: translateY(-2px);
 }
 
-#proxima:disabled {
+#voltar:disabled {
     opacity: 0.4;
     cursor: not-allowed;
 }
 
-#proxima:not(:disabled):hover {
-    background: #b16cff;
+
+/* PRÓXIMA */
+
+#proxima {
+    background: linear-gradient(
+        135deg,
+        #8b3dff,
+        #a85cff
+    );
+
+    color: white;
+
+    box-shadow:
+        0 6px 20px rgba(139, 61, 255, 0.2);
 }
 
-/* RESULTADO */
+#proxima:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#proxima:not(:disabled):hover {
+    background: linear-gradient(
+        135deg,
+        #9c51ff,
+        #bc70ff
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(139, 61, 255, 0.35);
+}
+
+
+/* ========================================
+   RESULTADO FINAL
+======================================== */
+
+.resultado-card {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Título */
+
+.resultado-card h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+
+/* Área do resultado */
+
 .resultado {
     text-align: center;
+    padding-top: 5px;
 }
 
-.resultado h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+
+/* ========================================
+   CÍRCULO DA PORCENTAGEM
+======================================== */
+
+.pontuacao-final {
+    width: 170px;
+    height: 170px;
+
+    margin: 20px auto 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #131321 55%,
+            #9b5cff 56%,
+            #762ee5 67%,
+            #24183b 68%
+        );
+
+    box-shadow:
+        0 0 35px rgba(155, 92, 255, 0.25);
+
+    animation:
+        aparecerPorcentagem 0.7s ease;
 }
 
-.resultado .porcentagem-final {
-    font-size: 70px;
-    color: #a963ff;
-    font-weight: bold;
-    margin: 20px 0;
+.pontuacao-final span {
+    font-size: 44px;
+    font-weight: 800;
+    color: white;
 }
 
-/* CELULAR */
+
+/* ========================================
+   TEXTO DOS ACERTOS
+======================================== */
+
+.acertos-final {
+    font-size: 19px !important;
+    color: #c8c5d6 !important;
+
+    margin-top: 10px !important;
+}
+
+.acertos-final strong {
+    color: #ffffff;
+}
+
+
+/* ========================================
+   MENSAGEM FINAL
+======================================== */
+
+.mensagem-final {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 11px 22px;
+
+    border-radius: 25px;
+
+    background: rgba(155, 92, 255, 0.10);
+
+    border: 1px solid rgba(155, 92, 255, 0.30);
+
+    color: #c17aff;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    box-shadow:
+        0 0 20px rgba(155, 92, 255, 0.08);
+}
+
+
+/* ========================================
+   BOTÃO JOGAR NOVAMENTE
+======================================== */
+
+.restart-btn {
+    display: block;
+
+    margin: 30px auto 0;
+
+    padding: 14px 30px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #8b3dff,
+        #b65cff
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(139, 61, 255, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.restart-btn:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(1.1);
+
+    box-shadow:
+        0 12px 30px rgba(139, 61, 255, 0.4);
+}
+
+.restart-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   ANIMAÇÕES
+======================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes aparecerPorcentagem {
+
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
 @media (max-width: 600px) {
 
     header {
@@ -245,5 +506,39 @@ main {
 
     .botoes button {
         padding: 11px 15px;
+    }
+
+
+    /* RESULTADO NO CELULAR */
+
+    .resultado-card {
+        min-height: 450px;
+    }
+
+    .resultado-card h1 {
+        font-size: 29px;
+    }
+
+    .pontuacao-final {
+        width: 140px;
+        height: 140px;
+    }
+
+    .pontuacao-final span {
+        font-size: 36px;
+    }
+
+    .acertos-final {
+        font-size: 16px !important;
+    }
+
+    .mensagem-final {
+        font-size: 18px;
+        padding: 10px 17px;
+    }
+
+    .restart-btn {
+        width: 100%;
+        max-width: 250px;
     }
 }
