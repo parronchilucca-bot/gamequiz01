@@ -28,9 +28,9 @@ const perguntas = [
         ]
     },
 
-    {
-        nivel: "FÁCIL",
-        categoria: "GTA V",
+    {CIL",
+        categoria: "GTA
+        nivel: "FÁ V",
         pergunta: "Qual protagonista de GTA V é um ex-assaltante de bancos?",
         alternativas: [
             { texto: "Michael De Santa", correta: true },
